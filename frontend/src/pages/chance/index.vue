@@ -6,25 +6,29 @@
       <li class="active">Data</li>
     </ol>
     <div class="erjibtn">
-      <button type="button" @click="btnAction({name:''})" class="btn btn-success">新建</button>
-      <button type="button" class="btn btn-danger">删除</button>
+      <button type="button" @click="componentId=editchance" class="btn btn-success">新建</button>
+      <!--<button type="button" class="btn btn-danger">删除</button>-->
     </div>
-    <component :is="componentId" v-bind="{'pagetype':nbType}"  :message="mydata" v-on:transCID="btnAction"></component>
+    <component :is="componentId"  :message="mydata" ></component>
   </div>
 
 </template>
 
 <script>
   import navbar from '../../components/navbar/'
-  import listview from '../../components/list_view/'
-  import newbuild from '../../components/newbuild/'
-  import $ from 'webpack-zepto'
+  import chancelist from './ChanceList'
+  import editchance from './EditChance'
+  import checkchance from './CheckChance'
+
+  import axios from 'axios'
 
   export default {
+      name:'chance',
     components:{
       navbar:navbar,
-      listview:listview,
-      newbuild:newbuild
+      chancelist:chancelist,
+      checkchance:checkchance,
+      editchance:editchance
     },
     computed:{
       mydata:function(){
@@ -35,37 +39,31 @@
     },
     mounted: function () {
       let me = this;
-      $.ajax({
-        type: 'GET',
-        url: 'http://localhost/crmdata/chance.json',
-        dataType: 'html',
-        success: (res)=>{
-        res = eval('(' + res + ')');
-        me.listData = res
-      },
-      error: (res)=>{
-        var error = JSON.parse(res.responseText);
-        this.$alert(error.error_msg);
-        return false;
-      }
-    })
+      axios.get('http://localhost/crmdata/chance.json')
+        .then(function (r) {
+          me.listData = res
+        })
+        .catch(function (r) {
+          //var error = JSON.parse(res.responseText);
+          me.$alert(r.data);
+        })
 
     },
     methods:{
       getCurMessage:function(){
         let me = this;
-        $.ajax({
-          type: 'GET',
-          url: 'http://localhost/crmdata/customerInfo.json',
-          dataType: 'html',
-          headers:{
-            'Cache-control':'no-cache'
-          },
-          success: (res)=>{
-          res = eval('(' + res + ')');
-          me.cdata = res
-        }
-      })
+//        $.ajax({
+//          type: 'GET',
+//          url: 'http://localhost/crmdata/customerInfo.json',
+//          dataType: 'html',
+//          headers:{
+//            'Cache-control':'no-cache'
+//          },
+//          success: (res)=>{
+//          res = eval('(' + res + ')');
+//          me.cdata = res
+//        }
+//      })
       },
       btnAction:function(_o){
         this.nbType = _o.name
@@ -95,7 +93,7 @@
         listData:'',
         cdata:'',
         nbType:'',
-        componentId:listview
+        componentId:chancelist
       }
     }
   }

@@ -27,8 +27,7 @@
 <script>
 export default {
   props:{
-    itype:{
-    },
+    itype:{},
     id:{},
     idata:{},
     tag:{

@@ -25,7 +25,8 @@ var router = new VueRouter({
   }, {
     path: '/chance',
     name: 'chance',
-    component: Chance
+    component: Chance,
+    children:[]
   }, {
     path: '/intention',
     name: 'intention',
