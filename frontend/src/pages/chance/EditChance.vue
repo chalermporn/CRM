@@ -1,10 +1,6 @@
-<style scoped>
-  .inputCont .input-group{ margin-top: 5px;}
-  .gobacktolist:hover{ cursor: pointer}
-</style>
 
 <template>
-  <div class="LoginRoot">
+  <div id="EditChance" class="editchance">
     <div @click="backList" class="gobacktolist">返回列表</div>
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>
@@ -14,16 +10,16 @@
             <div class="form-group">
               <label for="fatherName"  class="col-sm-1 control-label">宝爸姓名</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="fatherName" v-bind="{'idata':message.fatherName}" ></isinput>
+                <input  id="fatherName"  class="form-control" type="text" :value="message.fatherName">
               </div>
 
               <label for="fatherPhone" class="col-sm-1 control-label">宝爸电话</label >
               <div class="col-sm-2">
-                <isinput :itype="editObj()" id="fatherPhone"  v-bind="{'idata':message.fatherPhone}"></isinput>
+                <input  id="fatherPhone"  class="form-control" type="text" :value="message.fatherPhone">
               </div>
               <label for="fatherAdd" class="col-sm-1 control-label">公司单位</label>
               <div class="col-sm-4">
-                <isinput :itype="editObj()" id="fatherAdd" v-bind="{'idata':message.fatherAdd}"></isinput>
+                <input  id="fatherAdd"  class="form-control" type="text" :value="message.fatherAdd">
               </div>
 
             </div>
@@ -31,39 +27,39 @@
             <div class="form-group">
               <label  for="momName" class="col-sm-1 control-label">宝妈姓名</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="momName" v-bind="{'idata':message.momName}"></isinput>
+                <input  id="momName"  class="form-control" type="text" :value="message.momName">
               </div>
 
               <label  for="momPhone" class="col-sm-1 control-label">宝妈电话</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="momPhone" v-bind="{'idata':message.momPhone}"></isinput>
+                <input  id="momPhone"  class="form-control" type="text" :value="message.momPhone">
               </div>
               <label for="momAdd" class="col-sm-1 control-label">公司单位</label>
               <div class="col-sm-4">
-                <isinput  :itype="editObj()"  id="momAdd" v-bind="{'idata':message.momAdd}"></isinput>
+                <input  id="momAdd"  class="form-control" type="text" :value="message.momAdd">
               </div>
 
             </div>
             <div class="form-group">
               <label for="homeAdd"  class="col-sm-1 control-label">家庭住址</label>
               <div class="col-sm-5">
-                <isinput  :itype="editObj()"  id="homeAdd" v-bind="{'idata':message.homeAdd}"></isinput>
+                <input  id="homeAdd"  class="form-control" type="text" :value="message.homeAdd">
               </div>
 
               <label for="homePhone" class="col-sm-1 control-label">家庭电话</label >
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="homePhone" v-bind="{'idata':message.homePhone}"></isinput>
+                <input  id="homePhone"  class="form-control" type="text" :value="message.homePhone">
               </div>
             </div>
             <br>
             <div class="form-group">
               <label   class="col-sm-1 control-label">潜在客户状态</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="cusState" v-bind="{'idata':message.cusState,'tag':'select'}"></isinput>
+                <input  id="cusState"  class="form-control" type="text" :value="message.cusState">
               </div>
               <label   class="col-sm-1 control-label">潜在客户来源</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="cusFrom" v-bind="{'idata':message.cusFrom,'tag':'select'}"></isinput>
+                <input  id="cusFrom"  class="form-control" type="text" :value="message.cusFrom">
               </div>
 
             </div>
@@ -71,18 +67,18 @@
             <div class="form-group">
               <label for="recoMan"  class="col-sm-1 control-label">推荐人</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="recoMan" v-bind="{'idata':message.recoMan}"></isinput>
+                <input  id="recoMan"  class="form-control" type="text" :value="message.recoMan">
               </div>
               <label for="remindTime" class="col-sm-1 control-label">联系时间提醒</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="remindTime" v-bind="{'idata':message.remindTime}"></isinput>
+                <input  id="remindTime"  class="form-control" type="text" :value="message.remindTime">
               </div>
             </div>
 
             <div class="form-group">
               <label   class="col-sm-1 control-label">备注</label>
               <div class="col-sm-5">
-                <isinput  :itype="editObj()"  id="remarks" v-bind="{'idata':message.remarks,'tag':'textarea'}"></isinput>
+                <input  id="remarks"  class="form-control" type="text" :value="message.remarks" >
               </div>
             </div>
           </div>
@@ -100,7 +96,7 @@
             <div class="form-group">
               <label   class="col-sm-1 control-label">宝宝姓名</label>
               <div class="col-sm-2">
-                <isinput  :itype="editObj()"  id="remarks" v-bind="{'idata':message.remarks}"></isinput>
+                <input  id=""  class="form-control" type="text" value="">
               </div>
               <label   class="col-sm-1 control-label">宝宝性别</label>
               <div class="col-sm-2">
@@ -202,3 +198,7 @@
     }
   }
 </script>
+<style scoped>
+  .inputCont .input-group{ margin-top: 5px;}
+  .gobacktolist:hover{ cursor: pointer}
+</style>
