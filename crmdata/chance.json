@@ -1,0 +1,65 @@
+{
+    "navId": "1",
+    "navTitle": "潜在客户",
+	"cusMessageTitle":['编号','孩子姓名','电话','客户来源','最近联系时间','联系内容','学员所有人','校区'],
+    "cusMessageList": [
+        {
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        },
+        {
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        },{
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        },
+        {
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        },{
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        },
+        {
+            "serialNum": "12345",
+            "childName": "小强",
+            "Phone": "15811112222",
+            "From": "WebIn",
+            "recentTime": "2016-05-09",
+            "recentContent": "小朋友今天表现很好",
+            "ascription": "Amy",
+            "district": "沙城"
+        }
+    ]
+}

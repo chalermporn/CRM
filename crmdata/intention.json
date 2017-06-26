@@ -1,0 +1,36 @@
+{
+    "navId": "2",
+    "navTitle": "业务机会",
+    "cusMessageTitle":['编号','孩子姓名','电话','客户来源','最近联系时间','联系内容','学员所有人','校区'],
+    "cusMessageList": [
+      {
+        "serialNum": "150268",
+        "childName": "葫芦娃",
+        "Phone": "15811112222",
+        "From": "地推",
+        "recentTime": "2016-05-09",
+        "recentContent": "1,家长有意向家长 2,有意向家长有意向",
+        "ascription": "Amy",
+        "district": "回龙观"
+      },
+      {
+        "serialNum": "3334",
+        "childName": "小强",
+        "Phone": "15811112222",
+        "From": "WebIn",
+        "recentTime": "2016-05-09",
+        "recentContent": "小朋友今天表现很好",
+        "ascription": "LaoNiu",
+        "district": "北京"
+      },{
+        "serialNum": "1445225",
+        "childName": "小强",
+        "Phone": "15811112222",
+        "From": "WebIn",
+        "recentTime": "2016-05-09",
+        "recentContent": "小朋友今天表现很好",
+        "ascription": "laoniu",
+        "district": "上海"
+      }
+    ]
+  }
