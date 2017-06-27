@@ -6,7 +6,7 @@
       <li class="active">Data</li>
     </ol>
     <div class="erjibtn">
-      <button type="button" @click="componentId=editchance" class="btn btn-success">新建</button>
+      <button type="button" @click="componentId='editchance'" class="btn btn-success">新建</button>
       <!--<button type="button" class="btn btn-danger">删除</button>-->
     </div>
     <component :is="componentId"  :message="mydata" ></component>
@@ -24,6 +24,14 @@
 
   export default {
       name:'chance',
+    data: function () {
+      return {
+        listData:'',
+        cdata:'',
+        nbType:'',
+        componentId:chancelist
+      }
+    },
     components:{
       navbar:navbar,
       chancelist:chancelist,
@@ -33,11 +41,13 @@
     computed:{
       mydata:function(){
         //点返回列表 会执行一次，点查看的时候会执行两次 why？
-        console.log(this.componentId)
-        return this.componentId == listview ? this.listData : this.cdata
+        //console.log(this.componentId)
+        return ''
+        //return this.componentId == listview ? this.listData : this.cdata
       }
     },
     mounted: function () {
+          return;
       let me = this;
       axios.get('http://localhost/crmdata/chance.json')
         .then(function (r) {
@@ -87,14 +97,6 @@
 
       }
 
-    },
-    data: function () {
-      return {
-        listData:'',
-        cdata:'',
-        nbType:'',
-        componentId:chancelist
-      }
     }
   }
 </script>

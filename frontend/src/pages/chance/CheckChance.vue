@@ -174,9 +174,9 @@
 
   export default {
     name:'checkchance',
-    components: {
-      isinput
-    },
+//    components: {
+//      isinput
+//    },
     methods:{
       editObj:function(){
         return this.pagetype

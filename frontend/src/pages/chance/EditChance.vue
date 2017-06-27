@@ -171,13 +171,13 @@
 </template>
 
 <script>
-  import isinput from './input.vue'
+  //import isinput from './input.vue'
 
   export default {
     name:'editchance',
-    components: {
-      isinput
-    },
+//    components: {
+//      isinput
+//    },
     methods:{
       editObj:function(){
         return this.pagetype
