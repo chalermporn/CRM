@@ -1,0 +1,6 @@
+ChanceList
+判断电话是爸爸还是妈妈
+添加完整的测试数据
+
+CheckChance,EditChance
+路由跳转时候带数据

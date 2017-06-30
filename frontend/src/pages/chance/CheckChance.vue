@@ -1,6 +1,6 @@
 
 <template>
-  <div id="CheckChance" class="checkchance">
+  <div id="CheckChance" class="checkchance chanceTable">
     <div @click="backList" class="gobacktolist">返回列表</div>
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>

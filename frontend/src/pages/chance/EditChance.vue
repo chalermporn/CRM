@@ -1,6 +1,6 @@
 
 <template>
-  <div id="EditChance" class="editchance">
+  <div id="EditChance" class="editchance chanceTable">
     <div @click="backList" class="gobacktolist">返回列表</div>
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>
@@ -171,13 +171,33 @@
 </template>
 
 <script>
-  //import isinput from './input.vue'
 
   export default {
     name:'editchance',
-//    components: {
-//      isinput
-//    },
+    data: function () {
+      return {
+        message:{
+          fatherName:'',
+          fatherPhone:'',
+          fatherAdd:'',
+          momName:'',
+          momPhone:'',
+          momAdd:'',
+          homeAdd:'',
+          homePhone:'',
+          //潜在客户状态
+          cusState:'',
+          //潜在客户来源
+          cusFrom:'',
+          //推荐人
+          recoMan:'',
+          //联系时间提醒
+          remindTime:'',
+          //备注
+          remarks:''
+        }
+      }
+    },
     methods:{
       editObj:function(){
         return this.pagetype
@@ -186,14 +206,6 @@
         let o={}
         o.name = ''
         this.$emit('transCID',o)
-      }
-    },
-    props:{
-      message:{},
-      pagetype:{}
-    },
-    data: function () {
-      return {
       }
     }
   }

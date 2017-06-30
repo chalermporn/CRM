@@ -6,20 +6,17 @@
       <li class="active">Data</li>
     </ol>
     <div class="erjibtn">
-      <button type="button" @click="componentId='editchance'" class="btn btn-success">新建</button>
+      <button type="button" @click="gopage" class="btn btn-success">新建</button>
       <!--<button type="button" class="btn btn-danger">删除</button>-->
     </div>
-    <component :is="componentId"  :message="mydata" ></component>
+    <router-view></router-view>
+
   </div>
 
 </template>
 
 <script>
-  import navbar from '../../components/navbar/'
-  import chancelist from './ChanceList'
-  import editchance from './EditChance'
-  import checkchance from './CheckChance'
-
+  import navbar from '@/components/navbar/'
   import axios from 'axios'
 
   export default {
@@ -29,27 +26,16 @@
         listData:'',
         cdata:'',
         nbType:'',
-        componentId:chancelist
+        message:{}
       }
     },
     components:{
-      navbar:navbar,
-      chancelist:chancelist,
-      checkchance:checkchance,
-      editchance:editchance
-    },
-    computed:{
-      mydata:function(){
-        //点返回列表 会执行一次，点查看的时候会执行两次 why？
-        //console.log(this.componentId)
-        return ''
-        //return this.componentId == listview ? this.listData : this.cdata
-      }
+      navbar:navbar
     },
     mounted: function () {
           return;
       let me = this;
-      axios.get('http://localhost/crmdata/chance.json')
+      axios.get('http://localhost/crm/crmdata/chance.json')
         .then(function (r) {
           me.listData = res
         })
@@ -60,6 +46,9 @@
 
     },
     methods:{
+      gopage:function () {
+          this.$router.replace({name:'addChance'})
+      },
       getCurMessage:function(){
         let me = this;
 //        $.ajax({

@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 import Login from './pages/login/'
 import Home from './pages/home/'
 import Chance from './pages/chance/'
+const EditChance = resolve => require(['./pages/chance/EditChance.vue'], resolve)
+//import EditChance from './pages/chance/EditChance'
+const CheckChance = resolve => require(['./pages/chance/CheckChance'], resolve)
+const ChanceList = resolve => require(['./pages/chance/ChanceList'], resolve)
 import Intention from './pages/intention/'
 import Course from './pages/course/'
 import Newbuild from './components/newbuild/'
@@ -26,7 +30,29 @@ var router = new VueRouter({
     path: '/chance',
     name: 'chance',
     component: Chance,
-    children:[]
+    redirect:{name:'ChanceList'},
+    children:[
+      {
+        path:'add',
+        name:'addChance',
+        component:EditChance
+      },
+      {
+        path:'edit',
+        name:'editChance',
+        component:EditChance
+      },
+      {
+        path:'check',
+        name:'checkChance',
+        component:CheckChance
+      },
+      {
+        path:'list',
+        name:'ChanceList',
+        component:ChanceList
+      }
+    ]
   }, {
     path: '/intention',
     name: 'intention',
