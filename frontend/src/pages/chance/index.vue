@@ -2,8 +2,8 @@
   <div id="CHANCEROOT">
     <navbar></navbar>
     <ol class="breadcrumb">
-      <li><a href="#">潜在客户</a></li>
-      <li class="active">Data</li>
+      <li><router-link :to="{ name: 'ChanceList'}">潜在客户</router-link></li>
+      <li class="active">{{routerTitle}}</li>
     </ol>
     <div class="erjibtn">
       <button type="button" @click="gopage" class="btn btn-success">新建</button>
@@ -31,6 +31,14 @@
     },
     components:{
       navbar:navbar
+    },
+    computed:{
+      routerTitle:function(){
+        return this.$route.meta.title || {}
+      }
+    },
+    created:function(){
+      console.log(this.$route)
     },
     mounted: function () {
           return;

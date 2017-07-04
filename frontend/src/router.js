@@ -35,21 +35,25 @@ var router = new VueRouter({
       {
         path:'add',
         name:'addChance',
+        meta:{title:'新增数据'},
         component:EditChance
       },
       {
         path:'edit',
         name:'editChance',
+        meta:{title:'编辑数据'},
         component:EditChance
       },
       {
         path:'check',
         name:'checkChance',
+        meta:{title:'查看数据'},
         component:CheckChance
       },
       {
         path:'list',
         name:'ChanceList',
+        meta:{title:'数据列表'},
         component:ChanceList
       }
     ]

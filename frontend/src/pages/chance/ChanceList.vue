@@ -19,10 +19,11 @@
         <tbody>
         <tr  v-for="(m,index) in cusMessageList">
           <td>{{index+1}}</td>
-          <td>
-            <button @click="checkData(m.serialNum)" type="button"  class="btn btn-default">查看</button>
-            <button @click="editData(m.serialNum)"  type="button" class="btn btn-default">编辑</button>
+          <td style="width: 250px;">
+            <button @click="checkData(m)" type="button"  class="btn btn-default">查看</button>
+            <button @click="editData(m)"  type="button" class="btn btn-default">编辑</button>
             <button @click="deleteData(m.serialNum)" type="button"  class="btn btn-default">删除</button>
+            <button type="button"  class="btn btn-default">转业务机会</button>
           </td>
           <td>{{m.serialNum}}</td>
           <td>{{m.childName}}</td>
@@ -69,7 +70,25 @@ export default {
           "recentTime": "2016-05-09",
           "recentContent": "小朋友今天表现很好",
           "ascription": "Amy",
-          "district": "沙城"
+          "district": "沙城",
+          fatherName:'牛翼飞',
+          fatherPhone:'15810141625',
+          fatherAdd:'北京公司',
+          momName:'祝建兰',
+          momPhone:'13520012637',
+          momAdd:'公司公司',
+          homeAdd:'富达园',
+          homePhone:'03130313',
+          cusState:'潜在客户状态',
+          cusFrom:'来源',
+          recoMan:'推荐人',
+          remindTime:'联系时间',
+          remarks:'备注备注备注备注备注备注备注备注备注备注备注备注备注备注',
+          childName:'牛严青',
+          childSex:'男',
+          childBirthday:'1989-03-16',
+          childSchool:'就读学校',
+          childCharacter:'性格性格'
         },
         {
           "serialNum": "12345",
@@ -79,17 +98,35 @@ export default {
           "recentTime": "2016-05-09",
           "recentContent": "小朋友今天表现很好",
           "ascription": "Amy",
-          "district": "沙城"
-        }
+          "district": "沙城",
+          fatherName:'牛翼飞',
+          fatherPhone:'15810141625',
+          fatherAdd:'北京公司',
+          momName:'祝建兰',
+          momPhone:'13520012637',
+          momAdd:'公司公司',
+          homeAdd:'富达园',
+          homePhone:'03130313',
+          cusState:'潜在客户状态',
+          cusFrom:'来源',
+          recoMan:'推荐人',
+          remindTime:'联系时间',
+          remarks:'备注备注备注备注备注备注备注备注备注备注备注备注备注备注',
+          childName:'牛严青',
+          childSex:'男',
+          childBirthday:'1989-03-16',
+          childSchool:'就读学校',
+          childCharacter:'性格性格'
+        },
       ]
     }
   },
   methods:{
-    checkData:function (id) {
-
+    checkData:function (data) {
+      this.$router.push({name:'checkChance',params:data})
     },
-    editData:function (id) {
-
+    editData:function (data) {
+      this.$router.push({name:'editChance',params:data})
     },
     deleteData:function (id) {
 

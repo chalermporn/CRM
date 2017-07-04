@@ -1,7 +1,6 @@
 
 <template>
   <div id="CheckChance" class="checkchance chanceTable">
-    <div @click="backList" class="gobacktolist">返回列表</div>
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>
       <div class="panel-body">
@@ -19,7 +18,7 @@
               </div>
               <label for="fatherAdd" class="col-sm-1 control-label">公司单位</label>
               <div class="col-sm-4">
-                <p  id="fatherAdd" >{{message.fatherAdd}}</p>
+                <p class="form-control" id="fatherAdd" >{{message.fatherAdd}}</p>
               </div>
 
             </div>
@@ -27,39 +26,39 @@
             <div class="form-group">
               <label  for="momName" class="col-sm-1 control-label">宝妈姓名</label>
               <div class="col-sm-2">
-                <p   id="momName" >{{message.momName}}</p>
+                <p class="form-control"  id="momName" >{{message.momName}}</p>
               </div>
 
               <label  for="momPhone" class="col-sm-1 control-label">宝妈电话</label>
               <div class="col-sm-2">
-                <p  id="momPhone" >{{message.momPhone}}</p>
+                <p class="form-control" id="momPhone" >{{message.momPhone}}</p>
               </div>
               <label for="momAdd" class="col-sm-1 control-label">公司单位</label>
               <div class="col-sm-4">
-                <p  id="momAdd">{{message.momAdd}}</p>
+                <p class="form-control" id="momAdd">{{message.momAdd}}</p>
               </div>
 
             </div>
             <div class="form-group">
               <label for="homeAdd"  class="col-sm-1 control-label">家庭住址</label>
               <div class="col-sm-5">
-                <p  id="homeAdd">{{message.homeAdd}}</p>
+                <p class="form-control" id="homeAdd">{{message.homeAdd}}</p>
               </div>
 
               <label for="homePhone" class="col-sm-1 control-label">家庭电话</label >
               <div class="col-sm-2">
-                <p id="homePhone">{{message.homePhone}}</p>
+                <p class="form-control" id="homePhone">{{message.homePhone}}</p>
               </div>
             </div>
             <br>
             <div class="form-group">
               <label   class="col-sm-1 control-label">潜在客户状态</label>
               <div class="col-sm-2">
-                <p  id="cusState" >{{message.cusState}}</p>
+                <p class="form-control" id="cusState" >{{message.cusState}}</p>
               </div>
               <label   class="col-sm-1 control-label">潜在客户来源</label>
               <div class="col-sm-2">
-                <p   id="cusFrom" >{{message.cusFrom}}</p>
+                <p class="form-control"  id="cusFrom" >{{message.cusFrom}}</p>
               </div>
 
             </div>
@@ -67,18 +66,18 @@
             <div class="form-group">
               <label for="recoMan"  class="col-sm-1 control-label">推荐人</label>
               <div class="col-sm-2">
-                <p  id="recoMan">{{message.recoMan}}</p>
+                <p class="form-control" id="recoMan">{{message.recoMan}}</p>
               </div>
               <label for="remindTime" class="col-sm-1 control-label">联系时间提醒</label>
               <div class="col-sm-2">
-                <p  id="remindTime">{{message.remindTime}}</p>
+                <p class="form-control" id="remindTime">{{message.remindTime}}</p>
               </div>
             </div>
 
             <div class="form-group">
               <label   class="col-sm-1 control-label">备注</label>
               <div class="col-sm-5">
-                <p   id="remarks" >{{message.remarks}}</p>
+                <p  class="form-control" id="remarks" >{{message.remarks}}</p>
               </div>
             </div>
           </div>
@@ -96,29 +95,25 @@
             <div class="form-group">
               <label   class="col-sm-1 control-label">宝宝姓名</label>
               <div class="col-sm-2">
-                <p></p>
+                <p class="form-control"></p>
               </div>
               <label   class="col-sm-1 control-label">宝宝性别</label>
               <div class="col-sm-2">
-                <select class="form-control" name="" id="">
-                  <option value="">男</option>
-                  <option value="">女</option>
-                  <option value="">--无--</option>
-                </select>
+                <p class="form-control"></p>
               </div>
               <label   class="col-sm-1 control-label">出生日期</label>
               <div class="col-sm-2">
-                <input type="text" class="form-control" placeholder="" >
+                <p class="form-control"></p>
               </div>
             </div>
             <div class="form-group">
               <label   class="col-sm-1 control-label">现就读学校</label>
               <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="" >
+                <p class="form-control"></p>
               </div>
               <label   class="col-sm-1 control-label">宝宝性格</label>
               <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="" >
+                <p class="form-control"></p>
               </div>
             </div>
 
@@ -132,7 +127,10 @@
 
     <div class="panel panel-info">
       <div class="panel-heading">联系记录</div>
-      <div class="panel-body"></div>
+      <div class="panel-body">
+        <p class="form-control"></p>
+        <p class="form-control"></p>
+      </div>
     </div>
     <div class="panel panel-info">
       <div class="panel-heading">其他信息</div>
@@ -174,25 +172,21 @@
 
   export default {
     name:'checkchance',
-//    components: {
-//      isinput
-//    },
+    data: function () {
+      return {
+      }
+    },
     methods:{
       editObj:function(){
         return this.pagetype
-      },
-      backList: function () {
-        let o={}
-        o.name = ''
-        this.$emit('transCID',o)
       }
     },
-    props:{
-      message:{},
-      pagetype:{}
+    created:function(){
+
     },
-    data: function () {
-      return {
+    computed:{
+      message:function(){
+        return this.$route.params || {}
       }
     }
   }

@@ -1,7 +1,6 @@
 
 <template>
   <div id="EditChance" class="editchance chanceTable">
-    <div @click="backList" class="gobacktolist">返回列表</div>
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>
       <div class="panel-body">
@@ -176,26 +175,26 @@
     name:'editchance',
     data: function () {
       return {
-        message:{
-          fatherName:'',
-          fatherPhone:'',
-          fatherAdd:'',
-          momName:'',
-          momPhone:'',
-          momAdd:'',
-          homeAdd:'',
-          homePhone:'',
-          //潜在客户状态
-          cusState:'',
-          //潜在客户来源
-          cusFrom:'',
-          //推荐人
-          recoMan:'',
-          //联系时间提醒
-          remindTime:'',
-          //备注
-          remarks:''
-        }
+//        message:{
+//          fatherName:'',
+//          fatherPhone:'',
+//          fatherAdd:'',
+//          momName:'',
+//          momPhone:'',
+//          momAdd:'',
+//          homeAdd:'',
+//          homePhone:'',
+//          //潜在客户状态
+//          cusState:'',
+//          //潜在客户来源
+//          cusFrom:'',
+//          //推荐人
+//          recoMan:'',
+//          //联系时间提醒
+//          remindTime:'',
+//          //备注
+//          remarks:''
+//        }
       }
     },
     methods:{
@@ -203,9 +202,12 @@
         return this.pagetype
       },
       backList: function () {
-        let o={}
-        o.name = ''
-        this.$emit('transCID',o)
+
+      }
+    },
+    computed:{
+      message:function(){
+        return this.$route.params || {}
       }
     }
   }

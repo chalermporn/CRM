@@ -4,3 +4,61 @@ ChanceList
 
 CheckChance,EditChance
 路由跳转时候带数据
+
+字段名称
+
+fatherName 宝爸姓名
+
+fatherPhone 宝爸电话
+
+fatherAdd 公司单位
+
+momName 宝妈姓名
+
+momPhone 宝妈电话
+
+momAdd 公司单位
+
+homeAdd 家庭住址
+
+homePhone 家庭电话
+
+cusState  潜在客户状态
+
+cusFrom 潜在客户来源
+
+recoMan 推荐人
+
+remindTime 联系时间提醒
+
+remarks 备注
+
+childName  宝宝姓名
+
+childSex  宝宝性别
+
+childBirthday  出生日期
+
+childSchool  现就读学校
+
+childCharacter  宝宝性格
+
+serialNum  编号
+
+From 客户来源
+
+recentTime 最近联系日期
+
+recentContent  联系记录
+
+ascription  所有人
+
+district  校区
+
+
+
+
+表结构设计
+
+客户信息表
+联系记录表
