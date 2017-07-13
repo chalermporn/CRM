@@ -1,9 +1,4 @@
-ChanceList
-判断电话是爸爸还是妈妈
-添加完整的测试数据
 
-CheckChance,EditChance
-路由跳转时候带数据
 
 字段名称
 
@@ -61,4 +56,39 @@ district  校区
 表结构设计
 
 客户信息表
+Customer
+
+
 联系记录表
+ContactRecord
+
+customerid 客户信息id
+recordtime 联系时间
+record 联系内容
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
