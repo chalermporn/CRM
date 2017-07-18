@@ -11,3 +11,7 @@ CheckChance,EditChance
 本地安装 依赖包
 通过文件读取的方式fs，读取数据库配置文件 然后链接，服务开启后首先链接数据库
 
+2017.7.18
+通过 ./lib/route-map.lib.js  递归绑定 route.js里面按规定格式定义好的路由
+core\controllers  是控制入口
+chance.service和chance.controller 的文件结构准备好了
