@@ -1,6 +1,5 @@
 var async = require('async');
 var _ = require('lodash');
-var cache = require('../../lib/cache.lib');
 var categoriesModel = require('../models/chance.model');
 var mongoose = require('mongoose');
 

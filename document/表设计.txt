@@ -6,15 +6,15 @@ fatherName 宝爸姓名
 
 fatherPhone 宝爸电话
 
-fatherAdd 公司单位
+fatherAddress 公司单位
 
 momName 宝妈姓名
 
 momPhone 宝妈电话
 
-momAdd 公司单位
+momAddress 公司单位
 
-homeAdd 家庭住址
+homeAddress 家庭住址
 
 homePhone 家庭电话
 
@@ -66,8 +66,19 @@ customerid 客户信息id
 recordtime 联系时间
 record 联系内容
 
+接口定义
 
-
+1，潜在客户页面
+potential/all
+get
+potential/one
+get
+potential/save
+post
+potential/delete
+post
+potential/Transformation
+post
 
 
 

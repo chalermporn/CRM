@@ -1,100 +1,109 @@
 var mongoose = require('mongoose');
 
 /**
- * 栏目模型
+ * 客户模型
  */
-var categoriesSchema = new mongoose.Schema({
+var chanceSchema = new mongoose.Schema({
 
-  //父ID
-  parentId: {type:String,default:'0'},
-  // 类型
+  // 类型 区分是 0 潜在客户还是 1 业务机会
   type: {
-    type: String,
-    default: 'column',
-    enum: ['channel', 'column', 'page', 'link'],
-    required: true
-  },
-
-  // 分类名
-  name: {
-    type: String,
-    required: true
-  },
-// 关键字
-  keywords: String,
-
-  // 描述
-  description: String,
-  // SEO标题
-  seotitle: String,
-
-  //分类内容,简介等
-  content: String,
-  //更新时间
-  creatdate: { type: Date, default: Date.now },
-  //创建时间
-  updated: { type: Date, default: Date.now },
-
-  // 目录
-  path: {
-    type: String,
-    unique: true,
-    trim: true,
-    lowercase: true,
-    match: /^[A-z0-9\-\_\/]+$/,
-    sparse: true
-  },
-
-  // 是否在导航中显示
-  isShow: {
-    type: Boolean,
-    default: true
-  },
-
-  // 排序
-  sort: {
     type: Number,
-    default: 0
+    default: 0,
+    required: true
   },
-
-  // 内容模型
-  model: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Models'
+  //是否逻辑删除  false 未删除 true 删除
+  // 放入回收站
+  deleted: {
+    type: Boolean,
+    default: false
   },
-
-  // 视图
-  views: {
-    layout: String,
-    channel: String,
-    column: String,
-    content: String,
-    page: String
+  // 宝爸姓名
+  fatherName: {
+    type: String
   },
-
-  // 混合
-  mixed: {
-    // 栏目条数
-    pageSize: Number,
-    // 单页内容
-    pageContent: String,
-    // 单页媒体
-    pageMedia: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Media'
-      }
-    ],
-    // 单页后台可编辑性
-    isEdit: Boolean,
-    // 链接父目录
-    prePath: String,
-    // 链接地址
-    url: String
+  // 宝爸电话
+  fatherPhone: {
+    type: String
+  },
+  // 公司单位
+  fatherAddress: {
+    type: String
+  },
+  // 宝妈姓名
+  momName: {
+    type: String
+  },
+  // 宝妈电话
+  momPhone: {
+    type: String
+  },
+  // 公司单位
+  momAddress: {
+    type: String
+  },
+  // 家庭住址
+  homeAddress: {
+    type: String
+  },
+  // 家庭电话
+  homePhone: {
+    type: String
+  },
+  // 潜在客户状态
+  cusState: {
+    type: String
+  },
+  // 潜在客户来源
+  cusFrom: {
+    type: String
+  },
+  // 推荐人
+  recoMan: {
+    type: String
+  },
+  // 联系时间提醒
+  remindTime: {
+    type: Date
+  },
+  // 备注
+  remarks: {
+    type: String
+  },
+  // 宝宝姓名
+  childName: {
+    type: String
+  },
+  // 宝宝性别
+  childSex: {
+    type: String
+  },
+  // 出生日期
+  childBirthday: {
+    type: Date
+  },
+  // 现就读学校
+  childSchool: {
+    type: String
+  },
+  // 宝宝性格
+  childCharacter: {
+    type: String
+  },
+  // 编号
+  serialNum: {
+    type: String
+  },
+  // 所有人
+  ascription: {
+    type: String
+  },
+  // 校区
+  district: {
+    type: String
   }
+
 }, {
-  collection: 'categories',
-  id: false
+  collection: 'chance'
 });
 
-module.exports = mongoose.model('Categories', categoriesSchema);
+module.exports = mongoose.model('Chance', chanceSchema);

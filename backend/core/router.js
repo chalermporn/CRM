@@ -23,18 +23,28 @@ module.exports = {
         put: 'install.testDatabase'
       }
     },
+    //潜在客户
+    '/potential': {
+      '/all': {
+        get: 'chance.all',
+      },
 
+      '/save': {
+        post: 'chance.save'
+      },
 
-    //
+      '/delete': {
+        post: 'chance.delete'
+      },
 
-    // 模板
-    //'/views': {
-    //  get: [110100, 110201, 'views']
-    //},
+      '/transformation': {
+        post: 'chance.transformation'
+      }
+    }
 
      //统计
-    '/statistics': {
-      put: 'statistics'
-    }
+    //'/statistics': {
+    //  put: 'statistics'
+    //}
   }
 };

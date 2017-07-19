@@ -15,3 +15,7 @@ CheckChance,EditChance
 通过 ./lib/route-map.lib.js  递归绑定 route.js里面按规定格式定义好的路由
 core\controllers  是控制入口
 chance.service和chance.controller 的文件结构准备好了
+
+2017.7.19
+接口定义
+2017.7.20
