@@ -3,45 +3,26 @@ var _ = require('lodash');
 var categoriesModel = require('../models/chance.model');
 var mongoose = require('mongoose');
 
-/**
- * 所有分类
- * @param {Function} callback
- */
+
 exports.all = function (callback) {
-
+    categoriesModel.find({type:0,deleted:false}).exec(function (err, all) {
+        callback(err, all);
+    });
 };
 
+
+
 /**
- * 单个分类
- * @param {Object} options
- *        {MongoId} options._id
- *        {String} options.path
- *        {String} options.type
- * @param {Function} callback
+ * 保存
  */
-exports.one_byid = function (options, callback) {
-
-};
-
-exports.one = function (options, callback) {
-
-};
-
-/**
- * 保存分类
- * @param {Object} options
- *        {MongoId} options._id
- *        {String} options.data
- * @param {Function} callback
- */
-exports.save = function (options, callback) {
-
+exports.create = function (options, callback) {
+    new categoriesModel(options.data).save(function (err, content) {
+        callback(err, content);
+    })
 };
 
 /**
- * 删除分类
- * @param {Object} options
- * @param {Function} callback
+ * 删除
  */
 exports.remove = function (options, callback) {
 

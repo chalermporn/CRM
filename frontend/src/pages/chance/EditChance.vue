@@ -4,12 +4,13 @@
     <div class="panel panel-info">
       <div class="panel-heading">潜在客户信息</div>
       <div class="panel-body">
+        <button type="button" class="btn" @click="saveData">点击保存</button>
         <div class="inputCont container-fluid">
           <div class="form-horizontal">
             <div class="form-group">
               <label for="fatherName"  class="col-sm-1 control-label">宝爸姓名</label>
               <div class="col-sm-2">
-                <input  id="fatherName"  class="form-control" type="text" :value="message.fatherName">
+                <input  id="fatherName" v-model="fatherName"  class="form-control" type="text" :value="message.fatherName">
               </div>
 
               <label for="fatherPhone" class="col-sm-1 control-label">宝爸电话</label >
@@ -170,39 +171,23 @@
 </template>
 
 <script>
-
+  import axios from 'axios'
   export default {
     name:'editchance',
     data: function () {
       return {
-//        message:{
-//          fatherName:'',
-//          fatherPhone:'',
-//          fatherAdd:'',
-//          momName:'',
-//          momPhone:'',
-//          momAdd:'',
-//          homeAdd:'',
-//          homePhone:'',
-//          //潜在客户状态
-//          cusState:'',
-//          //潜在客户来源
-//          cusFrom:'',
-//          //推荐人
-//          recoMan:'',
-//          //联系时间提醒
-//          remindTime:'',
-//          //备注
-//          remarks:''
-//        }
+        fatherName:'a'
       }
     },
     methods:{
       editObj:function(){
         return this.pagetype
       },
-      backList: function () {
-
+      saveData: function () {
+        axios.post('http://localhost:3000/api/potential/create',{'fatherName':this.fatherName})
+          .then(function(res){
+            console.log(res)
+          })
       }
     },
     computed:{
